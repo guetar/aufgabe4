@@ -14,13 +14,13 @@ public abstract class Printable extends Scalable implements Pict {
     @Override
     //NB:output=rect
     public String toString() {
-        int width = (int) Math.round(super.getWidth() - 1);
-        int height = (int) Math.round(super.getHeight() - 1);
+        int width = (int) Math.round(super.getWidth());
+        int height = (int) Math.round(super.getHeight());
         String output = "";
         
         for(int i = 1; i < width; i++){
             for(int j = 1; j < height; j++){
-                if(i == 0 || j == 0 || i == width || j == height) {
+                if(i == 0 || j == 0 || i == width || j == height){
                     output += outer;
                 } else {
                     output += inner;
