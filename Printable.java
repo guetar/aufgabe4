@@ -20,7 +20,7 @@ public abstract class Printable extends Scalable implements Pict {
         
         for(int i = 1; i < width; i++){
             for(int j = 1; j < height; j++){
-                if(i == 0 || j == 0 || i == width || j == height) {
+                if(i == 0 || j == 0 || i == width || j == height) {
                     output += outer;
                 } else {
                     output += inner;
