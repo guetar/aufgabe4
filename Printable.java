@@ -16,8 +16,8 @@ public abstract class Printable extends Scalable implements Pict {
     @Override
     //NB: output=rect
     public String toString() {
-        int width = (int) Math.round(super.getWidth());
-        int height = (int) Math.round(super.getHeight());
+        int width = (int) Math.round(getWidth());
+        int height = (int) Math.round(getHeight());
         String output = "";
         
         for(int i = 1; i < width; i++){
