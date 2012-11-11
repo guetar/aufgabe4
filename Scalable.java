@@ -1,16 +1,14 @@
-
 /**
  *
  * @author Matthias
  */
 public abstract class Scalable implements Pict {
     //IV: width>0;height>0
-
     private double width;
     private double height;
 
-    //VB:width>0;height>0
-    //NB:this.width>0;this.height>0
+    //VB: width>0;height>0
+    //NB: this.width>0;this.height>0
     public Scalable(double width, double height) {
         this.width = width;
         this.height = height;
