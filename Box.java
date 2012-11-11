@@ -1,12 +1,12 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
  * @author steff
  */
-public class Box {
+public class Box extends Printable implements Pict{
     
+    //VB: outer darf kein Leerzeichen sein
+    public Box(char outer, char inner, double width, double height) {
+       super(outer, inner, width, height);
+       if (outer == ' ') { setOuter('#'); }
+    }
 }

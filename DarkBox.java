@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
  * @author steff
@@ -10,10 +5,12 @@
 public class DarkBox extends Scalable implements Pict {
     private char c;
     
+    //VB: width und height > 0
     public DarkBox(double width, double height, char c) {
         super(width, height);
         this.c = c;
     }
+    
     
     public String toString() {
         String s = "";
