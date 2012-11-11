@@ -34,4 +34,8 @@ public abstract class Printable extends Scalable implements Pict {
         }
         return output;
     } 
+    
+    public void setOuter(char outer){
+        this.outer = outer;
+    }
 }
