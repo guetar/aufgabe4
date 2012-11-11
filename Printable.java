@@ -7,6 +7,8 @@ public abstract class Printable extends Scalable implements Pict {
     private char outer;
     private char inner;
     
+    //VB: outer!=NULL;inner!=NULL;width>0;height>0
+    //NB: this.outer!=NULL;this.inner!=NULL
     public Printable(char outer, char inner, double width, double height) {
         super(width, height);
         this.outer = outer;
@@ -33,9 +35,26 @@ public abstract class Printable extends Scalable implements Pict {
             }
         }
         return output;
-    } 
+    }
     
-    public void setOuter(char outer){
-        this.outer = outer;
+    //NB: output=1Line
+    public String toString(int line) {
+        String output = "";
+        int width = (int) Math.round(getWidth());
+        
+        if(line == 0 || line == (int) Math.round(getHeight())) {
+            for(int i = 0; i < width; i++) {
+                output += outer;
+            }
+        } else {
+            for(int j = 0; j < width; j++) {
+                if(j == 0 || j == width) {
+                    output += outer;
+                } else {
+                    output += inner;
+                }
+            }
+        }
+        return output;
     }
 }
