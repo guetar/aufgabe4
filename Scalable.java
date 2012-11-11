@@ -23,7 +23,7 @@ public abstract class Scalable implements Pict {
     }
 
     //NB: return width
-    public double getWitdh() {
+    public double getWidth() {
         return width;
     }
 
