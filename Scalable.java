@@ -5,6 +5,7 @@
  */
 public abstract class Scalable implements Pict {
     //IV: width>0;height>0
+
     private double width;
     private double height;
 
@@ -19,5 +20,15 @@ public abstract class Scalable implements Pict {
     public void scale(double factor) {
         width = width * factor;
         height = height * factor;
+    }
+
+    //NB: return width
+    public double getWitdh() {
+        return width;
+    }
+
+    //NB: return height
+    public double getHeight() {
+        return height;
     }
 }
