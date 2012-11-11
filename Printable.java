@@ -15,6 +15,16 @@ public abstract class Printable extends Scalable implements Pict {
         this.inner = inner;
     }
     
+    //VB: outer!=NULL
+    public void setOuter(char outer) {
+        this.outer = outer;
+    }
+    
+    //VB: inner!=NULL
+    public void setInner(char inner) {
+        this.inner = inner;
+    }
+    
     @Override
     //NB: output=rect
     public String toString() {

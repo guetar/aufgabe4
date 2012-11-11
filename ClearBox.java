@@ -11,6 +11,6 @@ public class ClearBox extends Printable{
     
     //NB: return width/height 
     public double getAspectRatio(){
-    return getWidth()/getHeight();
+        return getWidth()/getHeight();
     }
 }
