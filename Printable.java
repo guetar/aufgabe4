@@ -7,12 +7,14 @@ public abstract class Printable extends Scalable implements Pict {
     private char outer;
     private char inner;
     
-    public Printable(double width, double height) {
+    public Printable(char outer, char inner, double width, double height) {
         super(width, height);
+        this.outer = outer;
+        this.inner = inner;
     }
     
     @Override
-    //NB:output=rect
+    //NB: output=rect
     public String toString() {
         int width = (int) Math.round(super.getWidth());
         int height = (int) Math.round(super.getHeight());
