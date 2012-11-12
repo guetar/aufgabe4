@@ -5,7 +5,7 @@
 public class Scaled<P> extends Container {
     
     public Scaled(P[][] container, double scalefactor) {
-        super(container, scalefactor);
+        super(container);
     }
 
     @Override
