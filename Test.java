@@ -11,6 +11,11 @@ public class Test {
         ClearBox clearBoxA = new ClearBox(4, 4);
         //FreeBox freeBoxA = new FreeBox("abc\ndef", 3, 2);
         
+        Box[][] boxarr=new Box[2][1];
+        boxarr[0][0]=new Box('C', '.', 3, 5);
+        boxarr[1][0]=new Box('E', 'O', 3, 5);        
+        Repeated<Box> reA=new Repeated<Box>(boxarr,1.0);
+        
         System.out.println(boxA);
         boxA.scale(2);
         System.out.println("Scale x2\n"+boxA);
@@ -35,5 +40,6 @@ public class Test {
 
         
         //System.out.println(freeBoxA);
+        System.out.println(reA);        
     }
 }
