@@ -46,18 +46,22 @@ public class Repeated<P> extends Container<P> {
 
                 for (int i = 0; i < maxheight; i++) {
                     if (i < elementlines.length) {
+                        while (elementlines[i].length() < maxwidth) {
+                            elementlines[i] += " ";
+                        }                        
                         if (lines[y * maxheight + i] == null) {
                             lines[y * maxheight + i] = elementlines[i];
                         } else {
                             lines[y * maxheight + i] += elementlines[i];
                         }
 
-                        while (lines[y * maxheight + i].length() < maxwidth) {
-                            lines[y * maxheight + i] += " ";
-                        }
+
                     } else {
                         //Leerzeilen
+                        if (lines[y * maxheight + i] == null)
                         lines[y * maxheight + i] = new String(new char[maxwidth]).replace("\0", " ");
+                        else
+                        lines[y * maxheight + i] += new String(new char[maxwidth]).replace("\0", " ");                            
                     }
                 }
 
