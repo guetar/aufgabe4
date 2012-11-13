@@ -81,11 +81,8 @@ public class Repeated<P> extends Container<P> {
             }
             if (scalefactor > 1 && scalefactor % 1 != 0) {
                 //teilweise Zeile an Zeile anhaengen
-                try {
                     lines[i] += line.substring(0, (int) Math.ceil(getWidth() * maxwidth * (scalefactor % 1)));
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
-                }
+                
             }
         }
 
@@ -96,7 +93,7 @@ public class Repeated<P> extends Container<P> {
 
 
         //Zeilen dem Skalierungsfaktor entsprechend kopieren
-        for (int j = 0; j < (int) scalefactor; j++) {
+        for (int j = 1; j < (int) scalefactor; j++) {
             for (int i = 0; i < lines.length; i++) {
                 ret += lines[i];
                 ret += "\n";
