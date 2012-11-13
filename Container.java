@@ -1,28 +1,28 @@
-
 /**
  *
  * @author Matthias
  */
 public abstract class Container<P> implements Pict{
-    
+
     protected P[][] container;
+    
     public Container(P[][] container){
-    this.container=container;
+        this.container=container;
     }
     protected int getWidth(){
-    return container.length;
+        return container.length;
     }
-    
+
     protected int getHeight(){
-    return container[0].length;
+        return container[0].length;
     }
-    
+
     protected P getBox(int x, int y){
-    return container[x][y];
+        return container[x][y];
     }
-    
+
     protected void setBox(int x, int y,P box){
-    container[x][y]=box;
+        container[x][y]=box;
     }
-    
+
 }
