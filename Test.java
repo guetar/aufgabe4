@@ -51,6 +51,8 @@ public class Test {
         boxarr[1][1]=new Box('C', '.', 5, 5);
         boxarr[2][1]=new Box('E', 'O', 3, 7); 
         Repeated<Scalable> reA=new Repeated<Scalable>(boxarr,1.0);
-        System.out.println(reA);   
+        Scaled<Scalable> scA=new Scaled<Scalable>(boxarr);
+        System.out.println(reA);
+        System.out.println(scA);
     }
 }
