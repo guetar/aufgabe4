@@ -28,8 +28,8 @@ public abstract class Printable extends Scalable implements Pict {
     @Override
     //NB: output=rect
     public String toString() {
-        int width = (int) Math.round(getWidth());
-        int height = (int) Math.round(getHeight());
+        int width = getWidth();
+        int height = getHeight();
         String output = "";
         
         if (width < 2)  { width = 2; }
@@ -44,27 +44,6 @@ public abstract class Printable extends Scalable implements Pict {
                 }
             }
             output += "\n";
-        }
-        return output;
-    }
-    
-    //NB: output=1Line
-    public String toString(int line) {
-        String output = "";
-        int width = (int) Math.round(getWidth());
-        
-        if(line == 0 || line == (int) Math.round(getHeight())) {
-            for(int i = 0; i < width; i++) {
-                output += outer;
-            }
-        } else {
-            for(int j = 0; j < width; j++) {
-                if(j == 0 || j == width) {
-                    output += outer;
-                } else {
-                    output += inner;
-                }
-            }
         }
         return output;
     }

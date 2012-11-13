@@ -32,7 +32,7 @@ public class Repeated<P> extends Container<P> {
         //Laenge und Breite bestimmen
         for (int x = 0; x < scwidth; x++) {
             for (int y = 0; y < scheight; y++) {
-                String[] lines = this.container[x][y].toString().split("\n");
+                String[] lines = getBox(x, y).toString().split("\n");
                 maxheight = Math.max(maxheight, lines.length);
                 maxwidth = Math.max(maxwidth, lines[0].length());
             }
@@ -42,7 +42,7 @@ public class Repeated<P> extends Container<P> {
         //zu kleine Elemente mit Leerzeichen auffuellen
         for (int x = 0; x < scwidth; x++) {
             for (int y = 0; y < scheight; y++) {
-                String[] elementlines = this.container[x][y].toString().split("\n");
+                String[] elementlines = getBox(x, y).toString().split("\n");
 
                 for (int i = 0; i < maxheight; i++) {
                     if (i < elementlines.length) {

@@ -17,7 +17,7 @@ public class FreeBox extends Scalable {
         setWidth(inputLines[0].length());
         setHeight(inputLines.length);
         
-        this.input = new char[(int) Math.round(getWidth())][(int) Math.round(getHeight())];
+        this.input = new char[getWidth()][getHeight()];
         
         for(int i = 0; i < getHeight(); i++) {
             for(int j = 0; j < getWidth(); j++) {
