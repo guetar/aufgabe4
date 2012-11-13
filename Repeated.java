@@ -66,10 +66,32 @@ public class Repeated<P> extends Container<P> {
             }
         }
 
-        //Ausgabe, raufskalieren fehlt noch
+        scwidth = (int) Math.ceil(scalefactor * this.getWidth());
+        scheight = (int) Math.ceil(scalefactor * this.getHeight());
         for (int i = 0; i < lines.length; i++) {
-            ret += lines[i] + "\n";
+            String line = new String(lines[i]);
+            //komplette Zeile an Zeile anhaengen
+            for (int j = 1; j < (int) scalefactor; j++) {
+                lines[i] += line;
+            }
+            if (scalefactor > 1 && scalefactor % 1 != 0) {
+                //teilweise Zeile an Zeile anhaengen
+                lines[i] += line.substring(0, (int) Math.round(getWidth() * maxwidth * (scalefactor - 1)));
+            }
         }
+
+        for (int i = 0; i < lines.length; i++) {
+            ret += lines[i];
+            ret += "\n";
+        }
+
+        //Zeilen dem Skalierungsfaktor entsprechend kopieren
+        for (int i = 0; i < lines.length * (scalefactor - 1); i++) {
+            ret += lines[i];
+            ret += "\n";
+        }
+
+
         return ret;
     }
 }
