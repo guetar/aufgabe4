@@ -18,7 +18,7 @@ public class Repeated<P> extends Container<P> {
     //VB: factor>0
     @Override
     public void scale(double factor) {
-        this.scalefactor = this.scalefactor * factor;
+        this.scalefactor = factor;
     }
 
     //NB: return
