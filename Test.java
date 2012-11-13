@@ -5,39 +5,52 @@
 public class Test {
 
     public static void main(String[] args) {
-    
+        
         Box boxA = new Box('#', '_', 3, 4);
-        DarkBox darkBoxA = new DarkBox('d', 5, 3);
-        ClearBox clearBoxA = new ClearBox(4, 4);
-        FreeBox freeBoxA = new FreeBox("abc\ndef");
-        
-        Box[][] boxarr=new Box[2][1];
-        boxarr[0][0]=new Box('C', '.', 3, 5);
-        boxarr[1][0]=new Box('E', 'O', 3, 5);        
-        Repeated<Box> reA=new Repeated<Box>(boxarr,1.0);
-        
         System.out.println(boxA);
         boxA.scale(2);
         System.out.println("Scale x2\n"+boxA);
         boxA.scale(0.01);
         System.out.println("Scale x0.01\n"+boxA);
         
+        
+        DarkBox darkBoxA = new DarkBox('d', 5, 3);
         System.out.println(darkBoxA);
         darkBoxA.scale(3);
         System.out.println("Scale x3\n"+darkBoxA);
         darkBoxA.scale(0.001);
         System.out.println("Scale x0.001\n"+darkBoxA);
         
+        
+        ClearBox clearBoxA = new ClearBox(4, 4);
         System.out.println(clearBoxA);
         clearBoxA.scale(3);
         System.out.println("Scale x3\n"+clearBoxA);
         clearBoxA.scale(0.001);
         System.out.println("Scale x0.001\n"+clearBoxA);
         clearBoxA.scale(1000);
-        System.out.println("Scale x1000\n"+clearBoxA);
-
-       
-        System.out.println(reA);   
+        System.out.println("Scale x1000\n"+clearBoxA); 
+        
+        
+        FreeBox freeBoxA = new FreeBox("abc\ndef");
         System.out.println(freeBoxA);
+        freeBoxA.scale(1.5);
+        System.out.println("Scale x1.5\n"+freeBoxA);
+        freeBoxA.scale(0.3);
+        System.out.println("Scale x0.3\n"+freeBoxA);
+        freeBoxA.scale(10);
+        System.out.println("Scale x10\n"+freeBoxA);
+        
+        
+        System.out.println("Container:\n");
+        Scalable[][] boxarr = new Scalable[3][2];
+        boxarr[0][0]=new Box('x', 'o', 5, 5);
+        boxarr[1][0]=new DarkBox('m', 3, 7);       
+        boxarr[2][0]=new ClearBox(4, 3);
+        boxarr[0][1]=new FreeBox("abc\ndef");
+        boxarr[1][1]=new Box('C', '.', 5, 5);
+        boxarr[2][1]=new Box('E', 'O', 3, 7); 
+        Repeated<Scalable> reA=new Repeated<Scalable>(boxarr,1.0);
+        System.out.println(reA);   
     }
 }
