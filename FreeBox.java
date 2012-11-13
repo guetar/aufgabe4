@@ -8,8 +8,8 @@ public class FreeBox extends Scalable {
     //VB: input!=NULL;width>0;height>0
     //    Alle Zeilen gleich lang
     //NB: this.input=char[inputWidth][inputHeight];this.width>0;this.height>0
-    public FreeBox(String input, int width, int height) {
-        super(width, height);
+    public FreeBox(String input) {
+        super();
         
 //        String n = System.getProperty("line.separator");
 //        String[] inputLines = input.split(n);
