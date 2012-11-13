@@ -17,6 +17,7 @@ public class Test {
         boxarr[0][0]=new Box('C', '.', 3, 5);
         boxarr[1][0]=new Box('E', 'O', 3, 5);        
         Repeated<Box> reA=new Repeated<Box>(boxarr,1.0);
+        Scaled<Box> scA=new Scaled<Box>(boxarr);
         
         System.out.println(boxA);
         System.out.println(boxB);
@@ -24,5 +25,6 @@ public class Test {
         System.out.println(clearBoxA);
         System.out.println(clearBoxB);
         System.out.println(freeBoxA);
+        System.out.println(boxarr);
     }
 }
