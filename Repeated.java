@@ -46,9 +46,14 @@ public class Repeated<P> extends Container<P> {
 
                 for (int i = 0; i < maxheight; i++) {
                     if (i < elementlines.length) {
-                        lines[y * maxheight + i] = elementlines[i];
+                        if (lines[y * maxheight + i] == null) {
+                            lines[y * maxheight + i] = elementlines[i];
+                        } else {
+                            lines[y * maxheight + i] += elementlines[i];
+                        }
+
                         while (lines[y * maxheight + i].length() < maxwidth) {
-                            lines[y * maxheight + i].concat(" ");
+                            lines[y * maxheight + i] += " ";
                         }
                     } else {
                         //Leerzeilen
@@ -63,7 +68,7 @@ public class Repeated<P> extends Container<P> {
 
         //Ausgabe, raufskalieren fehlt noch
         for (int i = 0; i < lines.length; i++) {
-            ret.concat(lines[i] + "\n");
+            ret += lines[i] + "\n";
         }
         return ret;
     }
