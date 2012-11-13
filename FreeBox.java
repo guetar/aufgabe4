@@ -14,8 +14,17 @@ public class FreeBox extends Scalable {
         String delimiter = System.getProperty("line.separator");
         String[] inputLines = input.split(delimiter);
         
-        setWidth(inputLines[0].length());
-        setHeight(inputLines.length);
+        if(inputLines[0].length() >= 2) {
+            setWidth(inputLines[0].length());
+        } else {
+            setWidth(2);
+        }
+        
+        if(inputLines.length >= 2) {
+            setHeight(inputLines.length);
+        } else {
+            setHeight(2);
+        }
         
         this.input = new char[getWidth()][getHeight()];
         
