@@ -34,5 +34,4 @@ public abstract class Container<P> implements Pict {
     protected void setBox(int x, int y, P box) {
         container[x][y] = box;
     }
-
 }
