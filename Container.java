@@ -13,6 +13,21 @@ public abstract class Container<P> implements Pict {
     //NB: this.container!=null; this.container[0]!=null
     public Container(P[][] container) {
         this.container = container;
+        initMaxSize();
+    }
+
+    public void initMaxSize() {
+        maxWidth = 0;
+        maxHeight = 0;
+        
+        for(int i = 0; i < getWidth(); i++) {
+            for(int j = 0; j < getHeight(); j++) {
+                
+                Scalable box = (Scalable) getBox(i, j);
+                if(box.getWidth() > maxWidth) maxWidth = box.getWidth();
+                if(box.getHeight() > maxHeight) maxHeight = box.getHeight();
+            }
+        }
     }
 
     //NB: return this.container.length
