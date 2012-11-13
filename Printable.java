@@ -64,5 +64,5 @@ public abstract class Printable extends Scalable implements Pict {
             }
         }
         return output;
-    }   
+    }
 }
