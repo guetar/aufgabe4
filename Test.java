@@ -37,9 +37,8 @@ public class Test {
         clearBoxA.scale(1000);
         System.out.println("Scale x1000\n"+clearBoxA);
 
-       
-        System.out.println(reA);   
         System.out.println(freeBoxA);
-        System.out.println(boxarr);
+        System.out.println(reA);
+        System.out.println(scA);
     }
 }

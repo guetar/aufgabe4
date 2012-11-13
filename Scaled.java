@@ -9,10 +9,14 @@ public class Scaled<P extends Pict> extends Container {
     
     public Scaled(P[][] container) {
         super(container);
+        scale(1.0);
     }
 
     @Override
     public void scale(double factor) {
+        maxWidth = 0;
+        maxHeight = 0;
+        
         for(int i = 0; i < getWidth(); i++) {
             for(int j = 0; j < getHeight(); j++) {
                 
@@ -47,6 +51,7 @@ public class Scaled<P extends Pict> extends Container {
                 }
             }
         }
+        System.out.println("output = " + output);
         return output;
     }
 }
