@@ -22,7 +22,7 @@ public abstract class Scalable implements Pict {
         width = width * factor;
         height = height * factor;
     }
-
+    
     //VB: width>0
     protected void setWidth(double width){
         this.width=width;

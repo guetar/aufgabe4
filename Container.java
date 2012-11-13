@@ -16,7 +16,7 @@ public abstract class Container<P> implements Pict {
         initMaxSize();
     }
 
-    private void initMaxSize() {
+    protected void initMaxSize() {
         maxWidth = 0;
         maxHeight = 0;
         
@@ -28,8 +28,6 @@ public abstract class Container<P> implements Pict {
                 maxHeight = (box.getHeight() > maxHeight) ? box.getHeight() : maxHeight;
             }
         }
-        System.out.println("maxWidth = " + maxWidth);
-        System.out.println("maxHeight = " + maxHeight);
     }
 
     //NB: return this.container.length

@@ -81,17 +81,17 @@ public class Test {
         Repeated<Scalable> reA=new Repeated<Scalable>(boxarr,1.0);
         System.out.println(reA);   
         
-        System.out.println("\nRepeated x1.4:");
-        reA.scale(1.4);
-        System.out.println(reA);
-        
-        System.out.println("\nRepeated x2:");
-        reA.scale(2);
-        System.out.println(reA);
-        
-        System.out.println("\nRepeated x0.1:");
-        reA.scale(0.1);
-        System.out.println(reA);
+//        System.out.println("\nRepeated x1.4:");
+//        reA.scale(1.4);
+//        System.out.println(reA);
+//        
+//        System.out.println("\nRepeated x2:");
+//        reA.scale(2);
+//        System.out.println(reA);
+//        
+//        System.out.println("\nRepeated x0.1:");
+//        reA.scale(0.1);
+//        System.out.println(reA);
         
         
         
