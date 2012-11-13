@@ -13,14 +13,19 @@ public class DarkBox extends Scalable implements Pict {
     
     
     public String toString() {
-        String s = "";
-        for(int i = 0; i < getHeight(); i++) {
-            for (int j = 0; j < getWidth(); j++) {
-                s += c;
+        int width = (int) Math.round(getWidth());
+        int height = (int) Math.round(getHeight());
+        String output = "";
+        
+        if (width < 2)  { width = 2; }
+        if (height < 2) { height = 2; }
+        for(int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                output += c;
             }
-            s += "\n";
+            output += "\n";
         }
-        return s;
+        return output;
     }
     
     
