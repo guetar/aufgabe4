@@ -1,23 +1,7 @@
 /**
  *
- * @author guetar
+ * @author steff
  */
-public class Repeated<P> extends Container {
+public class Repeated<P> {
     
-    double factor;
-    
-    public Repeated(P[][] container, double factor) {
-        super(container);
-        this.factor = factor;
-    }
-
-    @Override
-    public void scale(double factor) {
-        this.factor = factor;
-    }
-    
-    @Override
-    public String toString() {
-        return "blah";
-    }
 }
