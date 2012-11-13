@@ -16,7 +16,7 @@ public abstract class Container<P> implements Pict {
         initMaxSize();
     }
 
-    public void initMaxSize() {
+    private void initMaxSize() {
         maxWidth = 0;
         maxHeight = 0;
         
@@ -24,10 +24,12 @@ public abstract class Container<P> implements Pict {
             for(int j = 0; j < getHeight(); j++) {
                 
                 Scalable box = (Scalable) getBox(i, j);
-                if(box.getWidth() > maxWidth) maxWidth = box.getWidth();
-                if(box.getHeight() > maxHeight) maxHeight = box.getHeight();
+                maxWidth = (box.getWidth() > maxWidth) ? box.getWidth() : maxWidth;
+                maxHeight = (box.getHeight() > maxHeight) ? box.getHeight() : maxHeight;
             }
         }
+        System.out.println("maxWidth = " + maxWidth);
+        System.out.println("maxHeight = " + maxHeight);
     }
 
     //NB: return this.container.length
@@ -56,13 +58,13 @@ public abstract class Container<P> implements Pict {
         this.maxHeight = maxHeight;
     }
 
-    //VB: x>=0;y>=0
+    //VB: x>=0;y>=0;x<width;y<height;
     //NB: return this.container[x][y]
     protected P getBox(int x, int y) {
         return container[x][y];
     }
 
-    //VB: x>=0;y>=0;box!=null
+    //VB: x>=0;y>=0;x<width;y<height;box!=null
     //NB: container[x][y]!=null
     protected void setBox(int x, int y, P box) {
         container[x][y] = box;
