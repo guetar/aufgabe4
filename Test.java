@@ -6,21 +6,24 @@ public class Test {
 
     public static void main(String[] args) {
         
-        Box boxA = new Box('#', '_', 3, 4);
+        System.out.println("Box:");
+        Box boxA = new Box('#', '_', 2.4, 3.2);
         System.out.println(boxA);
         boxA.scale(2);
         System.out.println("Scale x2\n"+boxA);
         boxA.scale(0.01);
         System.out.println("Scale x0.01\n"+boxA);  
         
-        DarkBox darkBoxA = new DarkBox('d', 5, 3);
+        System.out.println("DarkBox:");
+        DarkBox darkBoxA = new DarkBox('d', 5, 3.1);
         System.out.println(darkBoxA);
         darkBoxA.scale(3);
         System.out.println("Scale x3\n"+darkBoxA);
         darkBoxA.scale(0.001);
         System.out.println("Scale x0.001\n"+darkBoxA);
         
-        ClearBox clearBoxA = new ClearBox(4, 4);
+        System.out.println("ClearBox:");
+        ClearBox clearBoxA = new ClearBox(4.1, 4);
         System.out.println(clearBoxA);
         clearBoxA.scale(3);
         System.out.println("Scale x3\n"+clearBoxA);
@@ -29,6 +32,7 @@ public class Test {
         clearBoxA.scale(1000);
         System.out.println("Scale x1000\n"+clearBoxA);
         
+        System.out.println("FreeBox:");
         FreeBox freeBoxA = new FreeBox("abc\ndef");
         System.out.println(freeBoxA);
         freeBoxA.scale(1.5);

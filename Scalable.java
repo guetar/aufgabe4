@@ -35,11 +35,11 @@ public abstract class Scalable implements Pict {
     
     //NB: return width
     public int getWidth() {
-        return (int) Math.round(width);
+        return (int) Math.ceil(width);
     }
 
     //NB: return height
     public int getHeight() {
-        return (int) Math.round(height);
+        return (int) Math.ceil(height);
     }
 }
