@@ -18,23 +18,23 @@ public class Scaled<P extends Pict> extends Container {
         String output = "";
         String delimiter = System.getProperty("line.separator");
         
-//        for(int j = 0; j < getHeight() * getMaxHeight(); j++) {
-//            for(int i = 0; i < getWidth(); i++) {
-//                
-//                P box = (P) getBox(i, j / getMaxHeight());
-//                String[] boxOut = box.toString().split(delimiter);
-//                System.out.println("j = " + j);
-//                System.out.println("getHeight() = " + getHeight());
-//                System.out.println("j%getHeight() = " + j%getHeight());
-//                output += boxOut[j%getHeight()];
-//                int diff = getMaxWidth() - boxOut[j%getHeight()].length();
-//
-//                for(int l = 0; l < diff; l++) {
-//                    output += " ";
-//                }
-//            }
-//            output += "\n";
-//        }
+        for(int j = 0; j < getHeight() * getMaxHeight(); j++) {
+            for(int i = 0; i < getWidth(); i++) {
+                
+                P box = (P) getBox(i, j / getMaxHeight());
+                String[] boxOut = box.toString().split(delimiter);
+                System.out.println("j = " + j);
+                System.out.println("getHeight() = " + getHeight());
+                System.out.println("j%getHeight() = " + j%getHeight());
+                output += boxOut[j%getHeight()];
+                int diff = getMaxWidth() - boxOut[j%getHeight()].length();
+
+                for(int l = 0; l < diff; l++) {
+                    output += " ";
+                }
+            }
+            output += "\n";
+        }
         
         for(int i = 0; i < getHeight(); i++) {
             for(int j = 0; j < getMaxHeight(); j++) {
