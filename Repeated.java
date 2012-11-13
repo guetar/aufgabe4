@@ -46,18 +46,22 @@ public class Repeated<P> extends Container<P> {
 
                 for (int i = 0; i < maxheight; i++) {
                     if (i < elementlines.length) {
+                        while (elementlines[i].length() < maxwidth) {
+                            elementlines[i] += " ";
+                        }                        
                         if (lines[y * maxheight + i] == null) {
                             lines[y * maxheight + i] = elementlines[i];
                         } else {
                             lines[y * maxheight + i] += elementlines[i];
                         }
 
-                        while (lines[y * maxheight + i].length() < maxwidth) {
-                            lines[y * maxheight + i] += " ";
-                        }
+
                     } else {
                         //Leerzeilen
+                        if (lines[y * maxheight + i] == null)
                         lines[y * maxheight + i] = new String(new char[maxwidth]).replace("\0", " ");
+                        else
+                        lines[y * maxheight + i] += new String(new char[maxwidth]).replace("\0", " ");                            
                     }
                 }
 
@@ -66,10 +70,32 @@ public class Repeated<P> extends Container<P> {
             }
         }
 
-        //Ausgabe, raufskalieren fehlt noch
+        scwidth = (int) Math.ceil(scalefactor * this.getWidth());
+        scheight = (int) Math.ceil(scalefactor * this.getHeight());
         for (int i = 0; i < lines.length; i++) {
-            ret += lines[i] + "\n";
+            String line = new String(lines[i]);
+            //komplette Zeile an Zeile anhaengen
+            for (int j = 1; j < (int) scalefactor; j++) {
+                lines[i] += line;
+            }
+            if (scalefactor > 1 && scalefactor % 1 != 0) {
+                //teilweise Zeile an Zeile anhaengen
+                lines[i] += line.substring(0, (int) Math.round(getWidth() * maxwidth * (scalefactor - 1)));
+            }
         }
+
+        for (int i = 0; i < lines.length; i++) {
+            ret += lines[i];
+            ret += "\n";
+        }
+
+        //Zeilen dem Skalierungsfaktor entsprechend kopieren
+        for (int i = 0; i < lines.length * (scalefactor - 1); i++) {
+            ret += lines[i];
+            ret += "\n";
+        }
+
+
         return ret;
     }
 }
