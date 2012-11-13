@@ -40,10 +40,8 @@ public class Scaled<P extends Pict> extends Container {
                     output += boxOut[k];
 
                     int diff = (int) Math.round(maxWidth) - boxOut[k].length();
-                    if(diff > 0) {
-                        for(int l = 0; l < diff; l++) {
-                            output += " ";
-                        }
+                    for(int l = 0; l < diff; l++) {
+                        output += " ";
                     }
                     output += "\n";
                 }

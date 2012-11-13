@@ -11,17 +11,19 @@ public class FreeBox extends Scalable {
     public FreeBox(String input) {
         super();
         
-//        String n = System.getProperty("line.separator");
-//        String[] inputLines = input.split(n);
-//        
-//        setWidth(inputLines[0].length());
-//        setHeight(inputLines.length);
-//        
-//        for(int i = 0; i < getWidth(); i++) {
-//            for(int j = 0; j < getHeight(); j++) {
-//                this.input[i][j] = inputLines[j].charAt(i);
-//            }
-//        }
+        String delimiter = System.getProperty("line.separator");
+        String[] inputLines = input.split(delimiter);
+        
+        setWidth(inputLines[0].length());
+        setHeight(inputLines.length);
+        
+        this.input = new char[getWidth()][getHeight()];
+        
+        for(int i = 0; i < getHeight(); i++) {
+            for(int j = 0; j < getWidth(); j++) {
+                this.input[j][i] = inputLines[i].charAt(j);
+            }
+        }
     }
     
     @Override
@@ -31,13 +33,11 @@ public class FreeBox extends Scalable {
         int w = input.length;
         int h = input[0].length;
         
-        for(int i = 0; i < getWidth(); i++) {
-            for(int j = 0; j < getHeight(); j++) {
-                output += input[i%w][j%h];
-                if(i == getWidth()) {
-                    output += "\n";
-                }
+        for(int i = 0; i < getHeight(); i++) {
+            for(int j = 0; j < getWidth(); j++) {
+                output += input[j%w][i%h];
             }
+            output += "\n";
         }
         return output;
     }
