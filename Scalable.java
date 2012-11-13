@@ -13,6 +13,9 @@ public abstract class Scalable implements Pict {
         this.width = width;
         this.height = height;
     }
+    
+    public Scalable() {
+    }
 
     //VB: 0.1 <= factor <= 10.0;
     public void scale(double factor) {
@@ -22,12 +25,12 @@ public abstract class Scalable implements Pict {
 
     //VB: width>0
     protected void setWidth(double width){
-    this.width=width;
+        this.width=width;
     }
  
     //VB: height>0
     protected void setHeight(double height){
-    this.height=height;
+        this.height=height;
     }    
     
     //NB: return width

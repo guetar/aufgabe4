@@ -32,17 +32,15 @@ public abstract class Printable extends Scalable implements Pict {
         int height = (int) Math.round(getHeight());
         String output = "";
         
-        for(int i = 1; i < width; i++){
-            for(int j = 1; j < height; j++){
-                if(i == 0 || j == 0 || i == width || j == height){
+        for(int i = 0; i < height; i++){
+            for(int j = 0; j < width; j++){
+                if(i == 0 || j == 0 || i == height-1 || j == width-1){
                     output += outer;
                 } else {
                     output += inner;
                 }
-                if(i == width) {
-                    output += "\n";
-                }
             }
+            output += "\n";
         }
         return output;
     }
