@@ -71,47 +71,45 @@ public class Test {
         
         
         System.out.println("\nRepeated:");
-        Scalable[][] boxarr = new Scalable[3][2];
-        boxarr[0][0]=new Box('x', 'o', 5, 5);
-        boxarr[1][0]=new DarkBox('m', 3, 3);       
-        boxarr[2][0]=new ClearBox(4, 7);
-        boxarr[0][1]=new FreeBox("abc\ndef");
-        boxarr[1][1]=new Box('C', '.', 5, 5);
-        boxarr[2][1]=new Box('E', 'O', 3, 7); 
-        Repeated<Scalable> reA=new Repeated<Scalable>(boxarr,1.0);
-        System.out.println(reA);   
+        Scalable[][] repeatedArray = new Scalable[3][2];
+        repeatedArray[0][0]=new Box('x', 'o', 5, 5);
+        repeatedArray[1][0]=new DarkBox('m', 3, 3);       
+        repeatedArray[2][0]=new ClearBox(4, 7);
+        repeatedArray[0][1]=new FreeBox("abc\ndef");
+        repeatedArray[1][1]=new Box('C', '.', 5, 5);
+        repeatedArray[2][1]=new Box('E', 'O', 3, 7); 
+        Repeated<Scalable> myRepeated=new Repeated<Scalable>(repeatedArray,1.0);
+        System.out.println(myRepeated);   
         
-//        System.out.println("\nRepeated x1.4:");
-//        reA.scale(1.4);
-//        System.out.println(reA);
-//        
-//        System.out.println("\nRepeated x2:");
-//        reA.scale(2);
-//        System.out.println(reA);
-//        
-//        System.out.println("\nRepeated x0.1:");
-//        reA.scale(0.1);
-//        System.out.println(reA);
+        System.out.println("\nRepeated x1.4:");
+        myRepeated.scale(1.4);
+        System.out.println(myRepeated);
         
+        System.out.println("\nRepeated x2:");
+        myRepeated.scale(2);
+        System.out.println(myRepeated);
         
+        System.out.println("\nRepeated x0.1:");
+        myRepeated.scale(0.1);
+        System.out.println(myRepeated);
         
         System.out.println("\nScaled:\n");
-        boxarr = new Scalable[3][2];
-        boxarr[0][0]=new Box('x', 'o', 5, 5);
-        boxarr[1][0]=new DarkBox('m', 3, 3);       
-        boxarr[2][0]=new ClearBox(4, 7);
-        boxarr[0][1]=new FreeBox("abc\ndef");
-        boxarr[1][1]=new Box('C', '.', 5, 5);
-        boxarr[2][1]=new Box('E', 'O', 3, 7); 
-        Scaled<Scalable> scA = new Scaled<Scalable>(boxarr);
-        System.out.println(reA);   
+        Scalable[][] scaledArray = new Scalable[3][2];
+        scaledArray[0][0]=new Box('x', 'o', 5, 5);
+        scaledArray[1][0]=new DarkBox('m', 3, 3);       
+        scaledArray[2][0]=new ClearBox(4, 7);
+        scaledArray[0][1]=new FreeBox("abc\ndef");
+        scaledArray[1][1]=new Box('C', '.', 5, 5);
+        scaledArray[2][1]=new Box('E', 'O', 3, 7); 
+        Scaled<Scalable> myScaled = new Scaled<Scalable>(scaledArray);
+        System.out.println(myScaled);   
         
         System.out.println("\nScaled x1.5:");
-        scA.scale(1.5);
-        System.out.println(reA);
+        myScaled.scale(1.5);
+        System.out.println(myScaled);
         
         System.out.println("\nScaled x0.3:");
-        scA.scale(0.3);
-        System.out.println(reA);
+        myScaled.scale(0.3);
+        System.out.println(myScaled);
     }
 }

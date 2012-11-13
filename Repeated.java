@@ -18,7 +18,7 @@ public class Repeated<P> extends Container<P> {
     //VB: factor>0
     @Override
     public void scale(double factor) {
-        this.scalefactor = this.scalefactor * factor;
+        this.scalefactor = factor * scalefactor;
     }
 
     //NB: return
@@ -48,7 +48,7 @@ public class Repeated<P> extends Container<P> {
                     if (i < elementlines.length) {
                         while (elementlines[i].length() < maxwidth) {
                             elementlines[i] += " ";
-                        }                        
+                        }
                         if (lines[y * maxheight + i] == null) {
                             lines[y * maxheight + i] = elementlines[i];
                         } else {
@@ -58,10 +58,11 @@ public class Repeated<P> extends Container<P> {
 
                     } else {
                         //Leerzeilen
-                        if (lines[y * maxheight + i] == null)
-                        lines[y * maxheight + i] = new String(new char[maxwidth]).replace("\0", " ");
-                        else
-                        lines[y * maxheight + i] += new String(new char[maxwidth]).replace("\0", " ");                            
+                        if (lines[y * maxheight + i] == null) {
+                            lines[y * maxheight + i] = new String(new char[maxwidth]).replace("\0", " ");
+                        } else {
+                            lines[y * maxheight + i] += new String(new char[maxwidth]).replace("\0", " ");
+                        }
                     }
                 }
 
@@ -80,7 +81,8 @@ public class Repeated<P> extends Container<P> {
             }
             if (scalefactor > 1 && scalefactor % 1 != 0) {
                 //teilweise Zeile an Zeile anhaengen
-                lines[i] += line.substring(0, (int) Math.round(getWidth() * maxwidth * (scalefactor - 1)));
+                    lines[i] += line.substring(0, (int) Math.ceil(getWidth() * maxwidth * (scalefactor % 1)));
+                
             }
         }
 
@@ -89,8 +91,15 @@ public class Repeated<P> extends Container<P> {
             ret += "\n";
         }
 
+
         //Zeilen dem Skalierungsfaktor entsprechend kopieren
-        for (int i = 0; i < lines.length * (scalefactor - 1); i++) {
+        for (int j = 1; j < (int) scalefactor; j++) {
+            for (int i = 0; i < lines.length; i++) {
+                ret += lines[i];
+                ret += "\n";
+            }
+        }
+        for (int i = 0; i < lines.length * (scalefactor % 1); i++) {
             ret += lines[i];
             ret += "\n";
         }
