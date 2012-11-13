@@ -5,6 +5,32 @@
 public class Test {
 
     public static void main(String[] args) {
+        /**
+         * Typstrukturen:
+         * 
+         * Scalable (implements Pict)
+         * |
+         * +------------+---------------+
+         * |            |               |
+         * Printable    DarkBox         FreeBox
+         * |
+         * +------------+
+         * |            |
+         * Box          ClearBox
+         * 
+         * 
+         * Container (implements Pict)
+         * |
+         * +------------+
+         * |            |
+         * Repeated<P>  Scaled<P extends Pict>
+         * 
+         * 
+         * 
+         */
+        
+        
+        
         
         System.out.println("Box:");
         Box boxA = new Box('#', '_', 2.4, 3.2);
@@ -33,7 +59,7 @@ public class Test {
         System.out.println("Scale x1000\n"+clearBoxA);
         
         System.out.println("FreeBox:");
-        FreeBox freeBoxA = new FreeBox("abc\ndef");
+        FreeBox freeBoxA = new FreeBox("abc\ndef\nghi\njkl");
         System.out.println(freeBoxA);
         freeBoxA.scale(1.5);
         System.out.println("Scale x1.5\n"+freeBoxA);
@@ -55,12 +81,16 @@ public class Test {
         Repeated<Scalable> reA=new Repeated<Scalable>(boxarr,1.0);
         System.out.println(reA);   
         
-        System.out.println("\nRepeated x1.5:");
-        reA.scale(1.5);
+        System.out.println("\nRepeated x1.4:");
+        reA.scale(1.4);
         System.out.println(reA);
         
-        System.out.println("\nRepeated x0.3:");
-        reA.scale(0.3);
+        System.out.println("\nRepeated x2:");
+        reA.scale(2);
+        System.out.println(reA);
+        
+        System.out.println("\nRepeated x0.1:");
+        reA.scale(0.1);
         System.out.println(reA);
         
         
