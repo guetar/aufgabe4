@@ -2,8 +2,8 @@
  *
  * @author guetar
  */
-public class Scaled<P> extends Container {
-    
+public class Scaled<P extends Pict> extends Container {
+       
     public Scaled(P[][] container, double scalefactor) {
         super(container);
     }
