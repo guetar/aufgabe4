@@ -5,6 +5,7 @@
 public class Test {
 
     public static void main(String[] args) {
+        
         /**
          * Typstrukturen und Vererbungen:
          * 
@@ -25,9 +26,6 @@ public class Test {
          * |            |
          * Repeated<P>  Scaled<P extends Pict>
          */
-        
-        
-        
         
         System.out.println("Box:");
         Box boxA = new Box('#', '_', 2.4, 3.2);
@@ -65,8 +63,6 @@ public class Test {
         freeBoxA.scale(10);
         System.out.println("FreeBox x10\n"+freeBoxA);
         
-        
-        
         System.out.println("\nRepeated:");
         Scalable[][] repeatedArray = new Scalable[3][2];
         repeatedArray[0][0]=new Box('x', 'o', 5, 5);
@@ -97,7 +93,7 @@ public class Test {
         scaledArray[2][0]=new ClearBox(4, 7);
         scaledArray[0][1]=new FreeBox("abc\ndef");
         scaledArray[1][1]=new Box('C', '.', 5, 5);
-        scaledArray[2][1]=new Box('E', 'O', 3, 7); 
+        scaledArray[2][1]=new Box('E', 'O', 3, 7);
         Scaled<Scalable> myScaled = new Scaled<Scalable>(scaledArray);
         System.out.println(myScaled);   
         
