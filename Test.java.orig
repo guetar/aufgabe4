@@ -5,7 +5,6 @@
 public class Test {
 
     public static void main(String[] args) {
-        
         /**
          * Typstrukturen:
          * 
@@ -29,6 +28,9 @@ public class Test {
          * 
          * 
          */
+        
+        
+        
         
         System.out.println("Box:");
         Box boxA = new Box('#', '_', 2.4, 3.2);
@@ -66,6 +68,8 @@ public class Test {
         freeBoxA.scale(10);
         System.out.println("Scale x10\n"+freeBoxA);
         
+        
+        
         System.out.println("\nRepeated:");
         Scalable[][] repeatedArray = new Scalable[3][2];
         repeatedArray[0][0]=new Box('x', 'o', 5, 5);
@@ -77,6 +81,19 @@ public class Test {
         Repeated<Scalable> myRepeated=new Repeated<Scalable>(repeatedArray,1.0);
         System.out.println(myRepeated);   
         
+<<<<<<< HEAD
+//        System.out.println("\nRepeated x1.4:");
+//        reA.scale(1.4);
+//        System.out.println(reA);
+//        
+//        System.out.println("\nRepeated x2:");
+//        reA.scale(2);
+//        System.out.println(reA);
+//        
+//        System.out.println("\nRepeated x0.1:");
+//        reA.scale(0.1);
+//        System.out.println(reA);
+=======
         System.out.println("\nRepeated x1.4:");
         myRepeated.scale(1.4);
         System.out.println(myRepeated);
@@ -88,6 +105,9 @@ public class Test {
         System.out.println("\nRepeated x0.1:");
         myRepeated.scale(0.1);
         System.out.println(myRepeated);
+>>>>>>> 95ef5bded413485bed0cd28b1158290f2f79baed
+        
+        
         
         System.out.println("\nScaled:\n");
         Scalable[][] scaledArray = new Scalable[3][2];
@@ -96,7 +116,7 @@ public class Test {
         scaledArray[2][0]=new ClearBox(4, 7);
         scaledArray[0][1]=new FreeBox("abc\ndef");
         scaledArray[1][1]=new Box('C', '.', 5, 5);
-        scaledArray[2][1]=new Box('E', 'O', 3, 7);
+        scaledArray[2][1]=new Box('E', 'O', 3, 7); 
         Scaled<Scalable> myScaled = new Scaled<Scalable>(scaledArray);
         System.out.println(myScaled);   
         
