@@ -73,9 +73,9 @@ public class Test {
         repeatedArray[2][0]=new ClearBox(4, 7);
         repeatedArray[0][1]=new FreeBox("abc\ndef");
         repeatedArray[1][1]=new Box('C', '.', 5, 5);
-        repeatedArray[2][1]=new Box('E', 'O', 3, 7); 
+        repeatedArray[2][1]=new Box('E', 'O', 3, 7);
         Repeated<Scalable> myRepeated=new Repeated<Scalable>(repeatedArray,1.0);
-        System.out.println(myRepeated);   
+        System.out.println(myRepeated);
         
         System.out.println("\nRepeated x1.4:");
         myRepeated.scale(1.4);
@@ -107,5 +107,20 @@ public class Test {
         System.out.println("\nScaled x0.3:");
         myScaled.scale(0.3);
         System.out.println(myScaled);
+        
+        System.out.println("\nRepeated Chars x0.1:");
+        Character[][] repCharArray = new Character[3][2];
+        repCharArray[0][0]='a';
+        repCharArray[1][0]='b';      
+        repCharArray[2][0]='c';
+        repCharArray[0][1]='d';
+        repCharArray[1][1]='e';
+        repCharArray[2][1]='f';
+        Repeated<Character> myCharRepeated=new Repeated<Character>(repCharArray,1.0);
+        System.out.println(myCharRepeated);
+        
+        System.out.println("\nRepeated Char x1.4:");
+        myCharRepeated.scale(2.5);
+        System.out.println(myCharRepeated);
     }
 }

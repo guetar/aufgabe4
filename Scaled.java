@@ -2,17 +2,18 @@
  *
  * @author guetar
  */
-public class Scaled<P extends Pict> extends Container {
+public class Scaled<P extends Pict> extends Container<P> {
     
     public Scaled(P[][] container) {
         super(container);
+        initMaxSize();
     }
     
     @Override
     public void scale(double factor) {
         for(int i = 0; i < getHeight(); i++) {
             for(int j = 0; j < getWidth(); j++) {
-                P box = (P) getBox(j, i);
+                P box = getBox(j, i);
                 box.scale(factor);
             }
         }

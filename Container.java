@@ -13,7 +13,6 @@ public abstract class Container<P> implements Pict {
     //NB: this.container!=null; this.container[0]!=null
     public Container(P[][] container) {
         this.container = container;
-        initMaxSize();
     }
 
     protected void initMaxSize() {
