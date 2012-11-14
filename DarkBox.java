@@ -12,6 +12,8 @@ public class DarkBox extends Scalable implements Pict {
     }
     
     
+    //VB: c != null
+    //NB: Rueckgabe des Strings
     public String toString() {
         int width = getWidth();
         int height = getHeight();
