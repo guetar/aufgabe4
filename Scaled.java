@@ -9,8 +9,9 @@ public class Scaled<P extends Pict> extends Container {
     }
     
     @Override
+    // VB: factor > 0
+    // NB: factor an alle P weitergegeben
     public void scale(double factor) {
-        System.out.println("scale of scaled here!");
         for(int i = 0; i < getHeight(); i++) {
             for(int j = 0; j < getWidth(); j++) {
                 P box = (P) getBox(j, i);
@@ -21,31 +22,49 @@ public class Scaled<P extends Pict> extends Container {
     }
     
     @Override
+    //VB: P[][] boxes != null
+    //NB: String-Feld aller EinzelStrings
     public String toString() {
-        String output = "";
-        String delimiter = System.getProperty("line.separator");
+        P[][] boxes = (P[][]) getBoxes();
+        int countX = getWidth();
+        int countY = getHeight();
+        String[][][] boxLines = new String[countX][countY][];
         
-        for(int i = 0; i < getHeight(); i++) {
-            for(int j = 0; j < getMaxHeight(); j++) {
-                for(int k = 0; k < getWidth(); k++) {
-                    
-                    P box = (P) getBox(i, k);
-                    String[] boxOut = box.toString().split(delimiter);
-                    
-                    int diff = getMaxWidth();
-                    
-                    if(boxOut.length >= j) {
-                        diff = getMaxWidth() - boxOut[j].length();
-                    }
-
-                    for(int l = 0; l < diff; l++) {
-                        output += " ";
-                    }
-                }
-                output += "\n";
+        for(int x = 0; x < countX; x++) {
+            for(int y = 0; y < countY; y++) {
+                boxLines[x][y] = boxes[x][y].toString().split("\n");
             }
         }
-        System.out.println("output = " + output);
+        
+        String output = "";
+        for (int y = 0; y < countY; y++) {
+            
+            for(int line = 0; line < getMaxHeight(); line++) {
+                
+                for (int x = 0; x < countX; x++) {
+                    
+                    String s = "";                
+
+                    if(line < boxLines[x][y].length) {
+                        s = boxLines[x][y][line];
+
+                        if(s.length() < getMaxWidth()) {
+                            int j = getMaxWidth()- s.length();
+                            for(int i = 0; i < j; i++) {
+                                s += " ";
+                            }
+                        }
+                    }
+                    else {
+                        for(int i = 0; i < getMaxWidth(); i++) {
+                            s += " ";
+                        }
+                    }
+                    output += s;
+                }
+                output += "\n";
+            } 
+        }
         return output;
     }
 }

@@ -6,7 +6,7 @@ public class Test {
 
     public static void main(String[] args) {
         /**
-         * Typstrukturen:
+         * Typstrukturen und Vererbungen:
          * 
          * Scalable (implements Pict)
          * |
@@ -24,9 +24,6 @@ public class Test {
          * +------------+
          * |            |
          * Repeated<P>  Scaled<P extends Pict>
-         * 
-         * 
-         * 
          */
         
         
@@ -36,37 +33,37 @@ public class Test {
         Box boxA = new Box('#', '_', 2.4, 3.2);
         System.out.println(boxA);
         boxA.scale(2);
-        System.out.println("Scale x2\n"+boxA);
+        System.out.println("Box x2\n"+boxA);
         boxA.scale(0.01);
-        System.out.println("Scale x0.01\n"+boxA);  
+        System.out.println("Box x0.01\n"+boxA);  
         
         System.out.println("DarkBox:");
         DarkBox darkBoxA = new DarkBox('d', 5, 3.1);
         System.out.println(darkBoxA);
         darkBoxA.scale(3);
-        System.out.println("Scale x3\n"+darkBoxA);
+        System.out.println("DarkBox x3\n"+darkBoxA);
         darkBoxA.scale(0.001);
-        System.out.println("Scale x0.001\n"+darkBoxA);
+        System.out.println("DarkBox x0.001\n"+darkBoxA);
         
         System.out.println("ClearBox:");
         ClearBox clearBoxA = new ClearBox(4.1, 4);
         System.out.println(clearBoxA);
         clearBoxA.scale(3);
-        System.out.println("Scale x3\n"+clearBoxA);
+        System.out.println("ClearBox x3\n"+clearBoxA);
         clearBoxA.scale(0.001);
-        System.out.println("Scale x0.001\n"+clearBoxA);
+        System.out.println("ClearBox x0.001\n"+clearBoxA);
         clearBoxA.scale(1000);
-        System.out.println("Scale x1000\n"+clearBoxA);
+        System.out.println("ClearBox x1000\n"+clearBoxA);
         
         System.out.println("FreeBox:");
         FreeBox freeBoxA = new FreeBox("abc\ndef\nghi\njkl");
         System.out.println(freeBoxA);
         freeBoxA.scale(1.5);
-        System.out.println("Scale x1.5\n"+freeBoxA);
+        System.out.println("FreeBox x1.5\n"+freeBoxA);
         freeBoxA.scale(0.3);
-        System.out.println("Scale x0.3\n"+freeBoxA);
+        System.out.println("FreeBox x0.3\n"+freeBoxA);
         freeBoxA.scale(10);
-        System.out.println("Scale x10\n"+freeBoxA);
+        System.out.println("FreeBox x10\n"+freeBoxA);
         
         
         
@@ -93,7 +90,7 @@ public class Test {
         myRepeated.scale(0.1);
         System.out.println(myRepeated);
         
-        System.out.println("\nScaled:\n");
+        System.out.println("\nScaled:");
         Scalable[][] scaledArray = new Scalable[3][2];
         scaledArray[0][0]=new Box('x', 'o', 5, 5);
         scaledArray[1][0]=new DarkBox('m', 3, 3);       
@@ -108,8 +105,12 @@ public class Test {
         myScaled.scale(1.5);
         System.out.println(myScaled);
         
-        System.out.println("\nScaled x0.3:");
-        myScaled.scale(0.3);
+        System.out.println("\nScaled x2:");
+        myScaled.scale(2);
+        System.out.println(myScaled);
+        
+        System.out.println("\nScaled x0.2:");
+        myScaled.scale(0.2);
         System.out.println(myScaled);
     }
 }
